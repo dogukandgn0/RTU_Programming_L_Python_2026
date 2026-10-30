@@ -27,17 +27,23 @@ Examples (these are also used to check your work):
 0.0
 """
 
-# TODO: import math
+"""""
+USED SOURCES
+https://www.geeksforgeeks.org/python/input-and-output-in-python/
+https://stackoverflow.com/questions/71789343/entering-int-or-float-using-input
+https://stackoverflow.com/questions/455612/limiting-floats-to-two-decimal-points
+""" ""
+
+import math
 
 
 def circle_area(radius: float) -> float:
     """Return the area of a circle given its radius (unrounded)."""
-    # TODO: implement formula using math.pi
-    raise NotImplementedError("circle_area() is not implemented yet")
+    area = radius * radius * math.pi
+    return area
 
 
 if __name__ == "__main__":
-    # Keep all input() calls inside this block, otherwise the autograder
-    # cannot import your file.
-    # TODO: ask for user input, call circle_area(), and print formatted result
-    pass
+    radius = float(input("Enter radius: "))
+    area = circle_area(radius)
+    print("Area of the circle:", round(area, 2))

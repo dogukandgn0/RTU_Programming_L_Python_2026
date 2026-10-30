@@ -25,15 +25,25 @@ Examples (these are also used to check your work):
 'Hello, Stranger! Welcome to Python!'
 """
 
+"""
+SOURCES
+https://www.w3schools.com/python/ref_string_strip.asp
+https://www.geeksforgeeks.org/python/python-program-to-check-if-string-is-empty-or-not/
+https://www.w3schools.com/python/python_string_formatting.asp
+"""
+
 
 def greet_user(name: str) -> str:
     """Return a greeting message after cleaning and capitalizing the name."""
-    # TODO: implement cleaning, the empty-name case, and formatting
-    raise NotImplementedError("greet_user() is not implemented yet")
+    nameWOSpace = name.strip()
+    nameCapitalized = nameWOSpace.capitalize()
+    if nameCapitalized == "":
+        finalName = "Stranger"
+    else:
+        finalName = nameCapitalized
+    return f"Hello, {finalName}! Welcome to Python!"
 
 
 if __name__ == "__main__":
-    # Keep all input() calls inside this block, otherwise the autograder
-    # cannot import your file.
-    # TODO: read name from input and print greeting
-    pass
+    nameInput = str(input("Enter your name: "))
+    print(greet_user(nameInput))
